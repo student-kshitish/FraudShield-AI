@@ -1,0 +1,54 @@
+{
+    "project": "FraudShield AI",
+    "phase": 2,
+    "generated_at": "2026-11-19T11:49:42.703264",
+    "dataset": {
+        "total_transactions": 100000,
+        "fraud_transactions": 800,
+        "normal_transactions": 99200,
+        "fraud_percentage": 0.8,
+        "normal_percentage": 99.2,
+        "columns": [
+            "transaction_id",
+            "timestamp",
+            "sender_id",
+            "receiver_id",
+            "amount",
+            "transaction_type",
+            "device_id",
+            "location",
+            "sender_balance_before",
+            "sender_balance_after",
+            "receiver_balance_before",
+            "receiver_balance_after",
+            "is_fraud",
+            "fraud_ring_id"
+        ],
+        "missing_values": 0,
+        "duplicate_transactions": 0,
+        "unique_accounts": 10246,
+        "unique_devices": 2025,
+        "unique_locations": 75,
+        "fraud_ring_count": 25
+    },
+    "amount_statistics": {
+        "overall_mean": 260.0101035,
+        "overall_median": 150.375,
+        "fraud_mean": 2119.3141499999997,
+        "normal_mean": 245.01571602822582,
+        "maximum": 48647.51,
+        "minimum": 1.07
+    },
+    "transaction_type_distribution": {
+        "TRANSFER": 30370,
+        "PAYMENT": 24751,
+        "CASH_OUT": 20107,
+        "CASH_IN": 14792,
+        "DEBIT": 9980
+    },
+    "fraud_by_transaction_type": {
+        "TRANSFER": 422,
+        "CASH_OUT": 378
+    },
+    "class_imbalance_ratio": 124.0
+}

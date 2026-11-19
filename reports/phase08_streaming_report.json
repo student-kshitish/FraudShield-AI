@@ -1,0 +1,14 @@
+{
+    "status": "PHASE08_STREAMING_COMPLETED",
+    "timestamp": "2026-11-19T11:12:45.076729+00:00",
+    "transactions_processed": 1000,
+    "fraud_predictions": 20,
+    "legitimate_predictions": 980,
+    "average_processing_latency_ms": 2622.579858779907,
+    "total_processing_time_seconds": 5.803454637527466,
+    "topic": "fraudshield-transactions",
+    "model": "XGBoost",
+    "feature_count": 27,
+    "feature_source": "Phase 03 engineered transaction dataset",
+    "mode": "Kafka feature-enriched transaction replay"
+}

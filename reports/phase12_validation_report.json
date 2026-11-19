@@ -1,0 +1,167 @@
+{
+    "project": "FraudShield AI",
+    "phase": 12,
+    "validation_timestamp_utc": "2026-11-19T12:53:30.981856+00:00",
+    "overall_status": "PASS",
+    "checks_passed": 30,
+    "checks_failed": 0,
+    "total_checks": 30,
+    "results": [
+        {
+            "check": "File: AIML-01/phase01_setup.py",
+            "status": "PASS",
+            "details": "Size: 5,289 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase02_dataset_eda.py",
+            "status": "PASS",
+            "details": "Size: 12,279 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase03_feature_engineering.py",
+            "status": "PASS",
+            "details": "Size: 14,507 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase04_train_model.py",
+            "status": "PASS",
+            "details": "Size: 15,324 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase05_mlflow_tracking.py",
+            "status": "PASS",
+            "details": "Size: 11,842 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase06_gnn_model.py",
+            "status": "PASS",
+            "details": "Size: 23,802 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase07_hybrid_model.py",
+            "status": "PASS",
+            "details": "Size: 17,130 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase08_kafka_streaming.py",
+            "status": "PASS",
+            "details": "Size: 13,156 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase09_fastapi_server.py",
+            "status": "PASS",
+            "details": "Size: 8,293 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase10_drift_monitoring.py",
+            "status": "PASS",
+            "details": "Size: 10,768 bytes"
+        },
+        {
+            "check": "File: AIML-01/phase11_dashboard.py",
+            "status": "PASS",
+            "details": "Size: 8,512 bytes"
+        },
+        {
+            "check": "File: models/xgboost_fraud_model.json",
+            "status": "PASS",
+            "details": "Size: 2,002,644 bytes"
+        },
+        {
+            "check": "File: models/graphsage_fraud_model.pt",
+            "status": "PASS",
+            "details": "Size: 305,979 bytes"
+        },
+        {
+            "check": "File: models/hybrid_fraud_model.json",
+            "status": "PASS",
+            "details": "Size: 565 bytes"
+        },
+        {
+            "check": "Valid JSON: reports/phase03_feature_report.json",
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Valid JSON: reports/phase07_hybrid_report.json",
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Valid JSON: reports/phase10_drift_report.json",
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "File: data/processed/transaction_features.csv",
+            "status": "PASS",
+            "details": "Size: 17,903,655 bytes"
+        },
+        {
+            "check": "File: data/processed/test_predictions.csv",
+            "status": "PASS",
+            "details": "Size: 815,709 bytes"
+        },
+        {
+            "check": "File: data/processed/gnn_test_predictions.csv",
+            "status": "PASS",
+            "details": "Size: 940,732 bytes"
+        },
+        {
+            "check": "File: data/processed/hybrid_test_predictions.csv",
+            "status": "PASS",
+            "details": "Size: 660,063 bytes"
+        },
+        {
+            "check": "File: data/processed/phase10_feature_drift.csv",
+            "status": "PASS",
+            "details": "Size: 2,835 bytes"
+        },
+        {
+            "check": "File: Dockerfile.phase11",
+            "status": "PASS",
+            "details": "Size: 411 bytes"
+        },
+        {
+            "check": "File: docker-compose.phase11.yml",
+            "status": "PASS",
+            "details": "Size: 1,261 bytes"
+        },
+        {
+            "check": "File: requirements-phase11.txt",
+            "status": "PASS",
+            "details": "Size: 101 bytes"
+        },
+        {
+            "check": "FastAPI health endpoint",
+            "status": "PASS",
+            "details": "HTTP 200"
+        },
+        {
+            "check": "FastAPI model-info endpoint",
+            "status": "PASS",
+            "details": "HTTP 200"
+        },
+        {
+            "check": "FastAPI metrics endpoint",
+            "status": "PASS",
+            "details": "HTTP 200"
+        },
+        {
+            "check": "Streamlit health endpoint",
+            "status": "PASS",
+            "details": "HTTP 200"
+        },
+        {
+            "check": "Kafka port 9092",
+            "status": "PASS",
+            "details": "TCP connection successful"
+        }
+    ],
+    "notes": [
+        "Validation checks file presence, JSON readability, HTTP endpoints and Kafka TCP connectivity.",
+        "A successful health check does not prove model accuracy or production readiness.",
+        "Model performance should be assessed using the recorded evaluation reports.",
+        "Kafka streaming is a replay prototype using engineered transaction features."
+    ]
+}

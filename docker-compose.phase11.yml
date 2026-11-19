@@ -1,0 +1,56 @@
+services:
+  fraudshield-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase11
+    container_name: fraudshield-api
+    command:
+      - uvicorn
+      - phase09_fastapi_server:app
+      - --app-dir
+      - /app/AIML-01
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./reports:/app/reports:ro
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  fraudshield-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase11
+    container_name: fraudshield-dashboard
+    command:
+      - streamlit
+      - run
+      - /app/AIML-01/phase11_dashboard.py
+      - --server.address
+      - 0.0.0.0
+      - --server.port
+      - "8501"
+    ports:
+      - "8501:8501"
+    environment:
+      FRAUDSHIELD_API_URL: http://fraudshield-api:8000
+    volumes:
+      - ./data:/app/data:ro
+      - ./reports:/app/reports:ro
+    depends_on:
+      fraudshield-api:
+        condition: service_healthy
+    restart: unless-stopped

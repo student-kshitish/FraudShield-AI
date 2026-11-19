@@ -1,0 +1,46 @@
+{
+    "phase": 6,
+    "status": "GNN_TRAINING_COMPLETED",
+    "model": "GraphSAGE",
+    "architecture": {
+        "convolution": "GraphSAGE",
+        "layers": 2,
+        "hidden_dimensions": [
+            64,
+            32
+        ],
+        "edge_classifier": [
+            64,
+            32,
+            1
+        ],
+        "dropout": 0.25
+    },
+    "graph": {
+        "unique_accounts": 10246,
+        "training_transactions": 70000,
+        "message_passing_edges": 140000,
+        "graph_construction": "training_transactions_only"
+    },
+    "feature_count": 27,
+    "best_validation_pr_auc": 0.8701890346691435,
+    "evaluation": {
+        "pr_auc": 0.8429802965519905,
+        "roc_auc": 0.9805158297397765,
+        "precision": 0.9484536082474226,
+        "recall": 0.7863247863247863,
+        "f1_score": 0.8598130841121495,
+        "f2_score": 0.8141592920353983,
+        "threshold": 0.8248878717422485,
+        "true_negative": 14878,
+        "false_positive": 5,
+        "false_negative": 25,
+        "true_positive": 92,
+        "test_transactions": 15000,
+        "actual_fraud_cases": 117,
+        "predicted_fraud_cases": 97
+    },
+    "model_file": "models/graphsage_fraud_model.pt",
+    "prediction_file": "data/processed/gnn_test_predictions.csv",
+    "device": "cuda"
+}

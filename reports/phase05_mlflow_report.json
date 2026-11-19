@@ -1,0 +1,38 @@
+{
+    "phase": 5,
+    "status": "MLFLOW_TRACKING_COMPLETED",
+    "model": "XGBoost",
+    "feature_count": 27,
+    "evaluation_metrics": {
+        "pr_auc": 0.6266401304197873,
+        "roc_auc": 0.9692754482111468,
+        "precision": 0.5,
+        "recall": 0.6324786324786325,
+        "f1_score": 0.5584905660377358,
+        "f2_score": 0.6006493506493507,
+        "threshold": 0.38640427589416504,
+        "true_negative": 14809,
+        "false_positive": 74,
+        "false_negative": 43,
+        "true_positive": 74,
+        "test_transactions": 15000,
+        "actual_fraud_cases": 117,
+        "predicted_fraud_cases": 148
+    },
+    "mlflow": {
+        "experiment_name": "FraudShield-Fraud-Detection",
+        "experiment_id": "1",
+        "run_id": "e35473f1254c4c74a5b275f477b344a3",
+        "tracking_uri": "sqlite:////home/kshitish/projects/FraudShield-AI/mlflow.db",
+        "dataset_hash_sha256": "d5cb67f4e24d4e2087e4083853de655bd63cb2781b83cc3bdfd8bd089caa0c84"
+    },
+    "artifacts_logged": [
+        "XGBoost model",
+        "Phase 04 model report",
+        "Feature importance",
+        "Test predictions",
+        "Evaluation metrics",
+        "Dataset metadata"
+    ],
+    "completed_at": "2026-11-19T09:00:32.323297+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "model_name": "FraudShield Hybrid Fraud Detector",
+  "phase": 7,
+  "architecture": "Weighted probability ensemble",
+  "components": [
+    "XGBoost",
+    "GraphSAGE"
+  ],
+  "weights": {
+    "xgboost": 0.5,
+    "graphsage": 0.5
+  },
+  "decision_threshold": 0.5,
+  "combination": "hybrid_probability = 0.5 * xgboost_probability + 0.5 * graphsage_probability",
+  "training_method": "No additional model training. Combines probabilities from Phase 04 and Phase 06.",
+  "threshold_policy": "Fixed 0.5 threshold for initial evaluation; not optimized on test labels."
+}

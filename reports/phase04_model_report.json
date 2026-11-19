@@ -1,0 +1,74 @@
+{
+    "phase": 4,
+    "status": "MODEL_TRAINING_COMPLETED",
+    "model": "XGBoost",
+    "input_dataset": "data/processed/transaction_features.csv",
+    "total_transactions": 100000,
+    "total_fraud_cases": 800,
+    "feature_count": 27,
+    "feature_columns": [
+        "amount",
+        "sender_balance_before",
+        "sender_balance_after",
+        "receiver_balance_before",
+        "receiver_balance_after",
+        "transaction_hour",
+        "transaction_day",
+        "transaction_day_of_week",
+        "is_weekend",
+        "is_night_transaction",
+        "amount_log",
+        "sender_previous_transaction_count",
+        "sender_txn_count_1h",
+        "sender_amount_sum_1h",
+        "sender_avg_amount_24h",
+        "sender_txn_count_24h",
+        "amount_vs_sender_avg_24h",
+        "receiver_txn_count_1h",
+        "receiver_txn_count_24h",
+        "device_txn_count_1h",
+        "location_txn_count_1h",
+        "sender_receiver_pair_previous_count",
+        "transaction_type_CASH_IN",
+        "transaction_type_CASH_OUT",
+        "transaction_type_DEBIT",
+        "transaction_type_PAYMENT",
+        "transaction_type_TRANSFER"
+    ],
+    "split": {
+        "training_rows": 70000,
+        "validation_rows": 15000,
+        "test_rows": 15000,
+        "strategy": "chronological_70_15_15"
+    },
+    "class_imbalance": {
+        "scale_pos_weight": 127.44036697247707
+    },
+    "evaluation": {
+        "pr_auc": 0.6266401304197873,
+        "roc_auc": 0.9692754482111468,
+        "precision": 0.5,
+        "recall": 0.6324786324786325,
+        "f1_score": 0.5584905660377358,
+        "f2_score": 0.6006493506493507,
+        "threshold": 0.38640427589416504,
+        "confusion_matrix": {
+            "true_negative": 14809,
+            "false_positive": 74,
+            "false_negative": 43,
+            "true_positive": 74
+        },
+        "test_transactions": 15000,
+        "actual_fraud_cases": 117,
+        "predicted_fraud_cases": 148
+    },
+    "top_5_features": [
+        "transaction_type_PAYMENT",
+        "transaction_type_CASH_IN",
+        "transaction_type_DEBIT",
+        "sender_receiver_pair_previous_count",
+        "amount"
+    ],
+    "model_file": "models/xgboost_fraud_model.json",
+    "predictions_file": "data/processed/test_predictions.csv"
+}
