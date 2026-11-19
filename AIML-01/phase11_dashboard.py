@@ -9,7 +9,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parent.parent
 
-API_URL = os.getenv("FRAUDSHIELD_API_URL", "http://127.0.0.1:8000")
+API_URL = os.getenv("FRAUDSHIELD_API_URL", "https://fraudshield-ai-ajck.onrender.com")
 DATA_FILE = ROOT / "data" / "processed" / "transaction_features.csv"
 DRIFT_FILE = ROOT / "reports" / "phase10_drift_report.json"
 FEATURE_REPORT = ROOT / "reports" / "phase03_feature_report.json"
