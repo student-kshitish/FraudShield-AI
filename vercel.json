@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "includeFiles": "{models/xgboost_fraud_model.json,reports/phase03_feature_report.json}"
+    }
+  }
+}
